@@ -9,6 +9,8 @@ Made by simonnnn777777 / SM x Simon
 
 /tank (0-100)    (Car Tank is set to your Number)
 
-Requirements:  ESX Framework and ox_fuel
+Requirements:  ESX Framework 
+               ox_fuel
+               ox_lib
 
 
