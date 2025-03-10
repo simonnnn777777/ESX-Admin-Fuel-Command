@@ -5,15 +5,25 @@ AddEventHandler("fuel:refill", function(fuelLevel)
 
     if vehicle and vehicle ~= 0 then
         if GetResourceState("ox_fuel") == "started" then
-            -- Nutze State Bags, um den Treibstoffstand zu setzen
+            -- Nutze State Bags für ox_fuel
             Entity(vehicle).state.fuel = fuelLevel
         else
-            -- Falls ox_fuel nicht läuft, nutze das native GTA V Fuel System
+            -- Falls ox_fuel nicht läuft, nutze das native GTA Fuel System
             SetVehicleFuelLevel(vehicle, fuelLevel + 0.0)
         end
 
-        TriggerEvent("fuel:notify", "Dein Tank wurde auf " .. fuelLevel .. "% gesetzt.")
+        -- ox_lib Notify verwenden
+        lib.notify({
+            title = 'Tank aufgefüllt',
+            description = 'Dein Tank wurde auf ' .. fuelLevel .. '% gesetzt.',
+            type = 'success' -- Typ: success, error, info, warning
+        })
     else
-        TriggerEvent("fuel:notify", "Du bist in keinem Fahrzeug!")
+        -- Falls kein Fahrzeug vorhanden ist, Fehlermeldung
+        lib.notify({
+            title = 'Fehler',
+            description = 'Du bist in keinem Fahrzeug!',
+            type = 'error'
+        })
     end
 end)
