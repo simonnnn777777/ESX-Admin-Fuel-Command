@@ -3,11 +3,11 @@ You can Change or Edit everything :)
 
 Made by simonnnn777777 / SM x Simon
 
-/tank 10    (Car Tank is set to 10)
+/fuel 10    (Car Tank is set to 10)
 
-/tank 25    (Car Tank is set to 25)
+/fuel 25    (Car Tank is set to 25)
 
-/tank (0-100)    (Car Tank is set to your Number)
+/fuel (0-100)    (Car Tank is set to your Number)
 
 Requirements:  
 ESX Framework, ox_lib, ox_fuel 
